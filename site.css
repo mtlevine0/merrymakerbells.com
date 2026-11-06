@@ -1,0 +1,85 @@
+/* merrymakerbells.com. Colors match branding/tokens.css. */
+@font-face{font-family:"Fraunces";src:url("/fonts/fraunces.woff2") format("woff2");font-weight:500 700;font-display:swap}
+@font-face{font-family:"Figtree";src:url("/fonts/figtree.woff2") format("woff2");font-weight:400 800;font-display:swap}
+:root{
+  --cardinal:#b3261e;--cardinal-dark:#8f1d17;--evergreen:#1f4d3a;--evergreen-deep:#173a2c;--brass:#c8963e;
+  --paper:#f6f4ef;--paper-deep:#ebe6da;--ink:#1d1b18;--stone:#6f6a61;--line:#e4e0d6;--card:#fff;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Figtree",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --gutter:40px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--font-text)}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+a:hover{color:var(--cardinal)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+:focus-visible{outline:3px solid var(--cardinal);outline-offset:3px;border-radius:4px}
+.on-dark :focus-visible{outline-color:var(--paper)}
+.on-dark a:hover{color:#fff}
+.display{font-family:var(--font-display);font-weight:620;font-variation-settings:"opsz" 144;letter-spacing:-.012em;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+.narrow{max-width:860px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:9;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{top:12px}
+.draftbar{background:var(--brass);color:var(--ink);text-align:center;font-size:14px;font-weight:700;padding:7px 16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:11px 24px;border-radius:13px;font-weight:700;text-decoration:none;text-align:center;transition:transform .12s ease,background .12s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none}
+.btn.primary{background:var(--cardinal);color:#fff}
+.btn.primary:hover{background:var(--cardinal-dark);color:#fff}
+.btn.quiet{border:2px solid var(--evergreen);color:var(--evergreen)}
+.btn.quiet:hover{background:var(--evergreen);color:var(--paper)}
+.btn.light{background:var(--paper);color:var(--ink)}
+.btn.light:hover{color:var(--ink);background:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+
+h2.title{font-size:clamp(34px,4.4vw,56px);line-height:1.05;color:var(--evergreen);margin-bottom:14px}
+.on-dark h2.title{color:var(--paper)}
+.intro{font-size:20px;max-width:34em;margin-bottom:36px}
+.kicker{font-family:var(--font-display);font-size:22px;font-weight:620;color:var(--cardinal);font-variation-settings:"opsz" 30;margin-bottom:6px}
+.fine{font-size:15.5px;color:var(--stone)}
+.on-dark .fine{color:inherit;opacity:.85}
+
+/* Header */
+.topnav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px}
+.topnav .home img{height:52px;width:auto}
+.topnav ul{display:flex;align-items:center;gap:28px;font-weight:600;font-size:16px}
+.topnav ul a:not(.btn){text-decoration:none}
+.topnav ul a[aria-current]{color:var(--cardinal)}
+
+/* Photos */
+.photo{border-radius:22px;overflow:hidden;background:#24221e;box-shadow:0 28px 50px -26px rgba(29,27,24,.7)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo-cap{font-size:15px;color:var(--stone);margin-top:10px}
+
+/* Footer */
+footer{background:var(--ink);color:var(--paper);padding:48px 0;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:start}
+footer .logo{height:50px;width:auto}
+footer p+p{margin-top:8px}
+footer .dim{opacity:.75}
+footer nav ul{display:grid;gap:6px;font-weight:600}
+footer nav a{text-decoration:none}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  footer .wrap{grid-template-columns:1fr;gap:22px}
+}
+@media (max-width:640px){
+  :root{--gutter:16px}
+  .topnav ul li:not(:last-child){display:none}
+  .topnav .home img{height:42px}
+  .topnav .btn{min-height:44px;padding:8px 16px;font-size:15px}
+  .intro{font-size:18.5px;margin-bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+  .btn:hover{transform:none}
+}

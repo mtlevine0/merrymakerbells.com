@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VJ4SF43');</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set up your Merrymaker</title>
+<meta name="description" content="Put your Merrymaker in your caroling bells and get it on Wi-Fi in a few minutes. Lights, buttons and what to do if something goes wrong.">
+<link rel="canonical" href="https://merrymakerbells.com/setup/">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://merrymakerbells.com/setup/">
+<meta property="og:title" content="Set up your Merrymaker">
+<meta property="og:description" content="From the box to ringing bells in a few minutes.">
+<meta property="og:image" content="https://merrymakerbells.com/img/share.jpg">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<style>
+.head{padding-top:24px;padding-bottom:40px}
+.head h1{font-size:clamp(44px,6vw,76px);line-height:1.02;color:var(--evergreen);margin-bottom:16px}
+.head .intro{margin-bottom:0}
+.need{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.need li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;line-height:1.3}
+.need small{display:block;font-weight:400;color:var(--stone);font-size:15px;margin-top:3px}
+
+.guide{counter-reset:step;padding-bottom:40px}
+.step{counter-increment:step;display:grid;grid-template-columns:76px 1fr;gap:4px 22px;padding:32px 0;border-top:1px solid #d7d1c3}
+.step::before{content:counter(step);grid-row:1/4;font-family:var(--font-display);font-weight:620;font-size:62px;line-height:.9;color:var(--cardinal);font-variation-settings:"opsz" 144}
+.step>*{grid-column:2}
+.step h2{font-size:clamp(26px,3vw,34px);line-height:1.15;color:var(--evergreen);margin-bottom:8px}
+.step p,.step li{max-width:36em}
+.step p+p,.step p+ul,.step ul+p{margin-top:10px}
+.step ul{display:grid;gap:6px;padding-left:20px;list-style:disc}
+.step figure{margin-top:18px;max-width:440px}
+.step .photo{aspect-ratio:1}
+.tip{margin-top:14px;background:#dfe9e2;color:var(--evergreen-deep);border-radius:12px;padding:12px 16px;font-size:16.5px;max-width:36em}
+.tip b{color:var(--evergreen)}
+code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.92em;background:var(--paper-deep);padding:1px 6px;border-radius:6px;white-space:nowrap}
+
+.panel{background:var(--evergreen);color:var(--paper);padding:72px 0;margin-top:24px}
+.panel h2.title{margin-bottom:28px}
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.part{background:var(--evergreen-deep);border-radius:18px;padding:20px 22px}
+.part h3{font-family:var(--font-display);font-weight:620;font-size:24px;margin-bottom:2px;font-variation-settings:"opsz" 30}
+.part .what{opacity:.8;font-size:15.5px;margin-bottom:12px}
+.part dl{display:grid;gap:10px}
+.part dt{font-weight:700;color:#f0d29a}
+.part dd{font-size:16.5px}
+
+.trouble{padding-top:80px;padding-bottom:96px}
+.trouble details{border-top:1px solid #d7d1c3}
+.trouble details:last-of-type{border-bottom:1px solid #d7d1c3}
+.trouble summary{cursor:pointer;font-weight:700;font-size:20px;padding:16px 0;list-style-position:inside}
+.trouble details>*:not(summary){max-width:40em}
+.trouble details p{padding-bottom:12px}
+.trouble details ul{list-style:disc;padding:0 0 16px 22px;display:grid;gap:6px}
+.trouble .more{margin-top:40px}
+
+@media (max-width:900px){
+  .need{grid-template-columns:1fr 1fr}
+  .parts{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .step{grid-template-columns:1fr;padding:26px 0}
+  .step>*{grid-column:1}
+  .step::before{grid-row:auto;font-size:48px;margin-bottom:4px}
+  .need{grid-template-columns:1fr}
+  .panel{padding:52px 0}
+  .trouble{padding-top:56px;padding-bottom:64px}
+  .trouble summary{font-size:18px}
+}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VJ4SF43" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap topnav">
+  <a class="home" href="/" aria-label="Merrymaker home"><img src="/img/lockup-horizontal.svg" alt="Merrymaker" width="220" height="52"></a>
+  <nav aria-label="Main"><ul>
+    <li><a href="/#songs">Songs</a></li>
+    <li><a href="/#fit">Will it fit?</a></li>
+    <li><a href="/setup/" aria-current="page">Setup</a></li>
+    <li><a href="#trouble">Help</a></li>
+    <li><a class="btn primary" href="/#buy">Get yours</a></li>
+  </ul></nav>
+</header>
+
+<main id="main">
+  <section class="wrap narrow head">
+    <p class="kicker">Setup guide</p>
+    <h1 class="display">From the box to ringing bells.</h1>
+    <p class="intro">It takes about five minutes, and you only do it once. After that, your bells are a tap away whenever your phone is on your home Wi-Fi.</p>
+    <ul class="need" aria-label="What you'll need">
+      <li>Your caroling bells<small>With their song cartridge slot</small></li>
+      <li>Your Merrymaker<small>And the power adapter it came with</small></li>
+      <li>Your phone<small>iPhone or Android, no app needed</small></li>
+      <li>Your Wi-Fi password<small>For a 2.4 GHz network</small></li>
+    </ul>
+  </section>
+
+  <div class="wrap narrow guide">
+    <section class="step" aria-labelledby="s1">
+      <h2 class="display" id="s1">Swap the cartridge</h2>
+      <p>Unplug your bells. Slide the old song cartridge out of the control box, and keep it somewhere safe. Then slide the Merrymaker into the same slot, the way it sits in this photo, until it's snug.</p>
+      <figure>
+        <div class="photo"><img src="/img/slot-900.webp" srcset="/img/slot-480.webp 480w, /img/slot-900.webp 900w" sizes="(max-width:640px) 92vw, 440px" width="1600" height="1600" alt="A Merrymaker seated in the cartridge slot of the bells' control box, lights on" loading="lazy"></div>
+      </figure>
+    </section>
+
+    <section class="step" aria-labelledby="s2">
+      <h2 class="display" id="s2">Plug in the new adapter</h2>
+      <p>Power your bells with the adapter that came with Merrymaker, not the original one. Merrymaker needs a little more power than the old adapter can give.</p>
+      <p>After a few seconds the <b>NET</b> light starts blinking. That means it's ready to meet your phone.</p>
+    </section>
+
+    <section class="step" aria-labelledby="s3">
+      <h2 class="display" id="s3">Join the Merrymaker network</h2>
+      <p>On your phone, open your Wi-Fi settings. You'll see a new network called <span class="mono">Merrymaker-</span> followed by four letters or numbers. Tap it. There's no password.</p>
+      <p>A Merrymaker page opens by itself. If it doesn't, open your web browser and go to <span class="mono">192.168.4.1</span>.</p>
+      <p class="tip"><b>Your phone may warn that this network has no internet.</b> That's expected. Choose to stay connected.</p>
+    </section>
+
+    <section class="step" aria-labelledby="s4">
+      <h2 class="display" id="s4">Choose your home Wi-Fi</h2>
+      <p>Pick your home network from the list, type its password and tap <b>Join network</b>. When Merrymaker is on, the NET light stops blinking and stays on, and the page says <b>All set</b>.</p>
+      <ul>
+        <li>Tap <b>Copy address</b>, then <b>Finish</b>. Your phone goes back to your home Wi-Fi.</li>
+        <li>Open Safari or Chrome, paste the address and go. It looks like <span class="mono">merrymaker-4f2a.local</span>.</li>
+      </ul>
+      <p class="tip"><b>Tip:</b> once the page is open, add it to your home screen. The Merrymaker bell shows up next to your apps, and opens your bells in one tap. The page shows you how.</p>
+    </section>
+
+    <section class="step" aria-labelledby="s5">
+      <h2 class="display" id="s5">Pick a song</h2>
+      <p>Tap a collection, tap a song, and let them ring. Choose to play one song, repeat it, play through the whole collection or shuffle.</p>
+      <p>Got more than one set? Set each one up the same way, on the same Wi-Fi. Then press play on any of them, and they all ring together. You'll find every set listed under <b>Choir</b>.</p>
+    </section>
+  </div>
+
+  <section class="panel on-dark" aria-labelledby="parts-title">
+    <div class="wrap">
+      <h2 class="title display" id="parts-title">Lights and buttons.</h2>
+      <div class="parts">
+        <div class="part">
+          <h3>NET light</h3>
+          <p class="what">Wi-Fi</p>
+          <dl>
+            <dt>Blinking</dt><dd>The Merrymaker network is open for your phone to join.</dd>
+            <dt>On</dt><dd>On your home Wi-Fi and ready to play.</dd>
+          </dl>
+          <h3 style="margin-top:22px">STS light</h3>
+          <p class="what">Status</p>
+          <dl><dt>Flickering</dt><dd>Ringing the bells. It flashes with every note.</dd></dl>
+        </div>
+        <div class="part">
+          <h3>WIFI button</h3>
+          <p class="what">For finding or moving your set</p>
+          <dl>
+            <dt>Press</dt><dd>Opens the Merrymaker network again, without forgetting your Wi-Fi. Join it to find your set's address, or to move it to another network. It closes by itself after 5 minutes.</dd>
+            <dt>Hold 5 seconds</dt><dd>Forgets your Wi-Fi and starts setup again.</dd>
+          </dl>
+        </div>
+        <div class="part">
+          <h3>USER button</h3>
+          <p class="what">For playing without your phone</p>
+          <dl>
+            <dt>Press</dt><dd>Plays or stops a song.</dd>
+            <dt>Hold 5 seconds, then let go</dt><dd>Forgets your Wi-Fi.</dd>
+            <dt>Hold 10 seconds</dt><dd>Resets everything: Wi-Fi, the set's name and all settings. Your bells start over at step 3.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap narrow trouble" id="trouble" aria-labelledby="trouble-title">
+    <h2 class="title display" id="trouble-title">If something's not right.</h2>
+    <details><summary>I can't see the Merrymaker network</summary>
+      <ul>
+        <li>Check the NET light is blinking. If it's on steadily, your set is already on Wi-Fi: press the WIFI button to open the network again.</li>
+        <li>If no lights come on at all, check the adapter is plugged in at both ends and the Merrymaker is pushed fully into its slot.</li>
+        <li>Give it 30 seconds after plugging in, then refresh the Wi-Fi list on your phone.</li>
+      </ul>
+    </details>
+    <details><summary>My home network isn't in the list</summary>
+      <p>Merrymaker uses 2.4 GHz Wi-Fi, the kind almost every home router has. If your router splits its networks by band, choose the one that doesn't end in "5G". Move the bells closer to the router if the network is weak.</p>
+    </details>
+    <details><summary>It couldn't join my Wi-Fi</summary>
+      <p>Usually the password was mistyped. If Merrymaker can't join, the Merrymaker network comes back by itself after about 20 seconds. Join it again and re-enter the password. Passwords are case-sensitive.</p>
+    </details>
+    <details><summary>The address won't open</summary>
+      <ul>
+        <li>Make sure your phone is back on your home Wi-Fi, not the Merrymaker network or mobile data.</li>
+        <li>Try the number address shown under <b>All set</b> instead, such as <span class="mono">192.168.1.42</span>. Some phones and computers don't understand the <span class="mono">.local</span> name.</li>
+        <li>Lost the address? Press the WIFI button, join the Merrymaker network, and the page shows it again.</li>
+      </ul>
+    </details>
+    <details><summary>The bells are quiet, or some bells don't ring</summary>
+      <ul>
+        <li>Use the adapter that came with Merrymaker. The original one doesn't give enough power.</li>
+        <li>Open <b>Bells</b> on the Merrymaker page and tap each bell to test it. A bell that never rings may need its hammer or plug checked on the bells themselves.</li>
+      </ul>
+    </details>
+    <details><summary>My sets aren't playing together</summary>
+      <p>Each set needs to be on the same Wi-Fi network. Open <b>Choir</b> on any set's page to see which sets it can find. Guest networks and mesh systems that keep devices apart can stop sets from hearing each other.</p>
+    </details>
+    <details><summary>I want to move it to a new router or a friend's house</summary>
+      <p>Press the WIFI button, join the Merrymaker network and pick the new network. Or hold the WIFI button for 5 seconds to forget the old network and start setup again.</p>
+    </details>
+    <p class="more">Still stuck? Message us through eBay and we'll help you get ringing.</p>
+  </section>
+</main>
+
+<footer class="on-dark">
+  <div class="wrap">
+    <img class="logo" src="/img/lockup-horizontal-paper.svg" alt="Merrymaker" width="212" height="50">
+    <div>
+      <p>Teach your old bells new songs.</p>
+      <p class="dim">Merrymaker is an independent product, not made by or affiliated with the makers of Ye Merrie Minstrel. "Ye Merrie Minstrel" is used only to describe compatibility. Bells, shown or mentioned, are not included.</p>
+    </div>
+    <nav aria-label="Footer"><ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#songs">Songbook</a></li>
+      <li><a href="https://ebay.io/m/eSgWhs">Buy on eBay</a></li>
+    </ul></nav>
+  </div>
+</footer>
+</body>
+</html>
