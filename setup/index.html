@@ -36,7 +36,13 @@
 .step p+p,.step p+ul,.step ul+p{margin-top:10px}
 .step ul{display:grid;gap:6px;padding-left:20px;list-style:disc}
 .step figure{margin-top:18px;max-width:440px}
+.step figure+p{margin-top:18px}
 .step .photo{aspect-ratio:1}
+.key{margin-top:16px;background:var(--card);border:2px solid var(--cardinal);border-radius:14px;padding:16px 20px;max-width:36em}
+.key h3{font-family:var(--font-display);font-weight:620;font-size:22px;color:var(--cardinal);margin-bottom:8px;font-variation-settings:"opsz" 30}
+.key ol{list-style:decimal;padding-left:22px;display:grid;gap:6px}
+.key p{margin-top:10px;font-size:16.5px}
+.key a{color:var(--evergreen);font-weight:700}
 .tip{margin-top:14px;background:#dfe9e2;color:var(--evergreen-deep);border-radius:12px;padding:12px 16px;font-size:16.5px;max-width:36em}
 .tip b{color:var(--evergreen)}
 code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.92em;background:var(--paper-deep);padding:1px 6px;border-radius:6px;white-space:nowrap}
@@ -93,7 +99,7 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
 <main id="main">
   <section class="wrap narrow head">
     <p class="kicker">Setup guide</p>
-    <h1 class="display">From the box to ringing bells.</h1>
+    <h1 class="display">Let's get started.</h1>
     <p class="intro">It takes about five minutes, and you only do it once. After that, your bells are a tap away whenever your phone is on your home Wi-Fi.</p>
     <ul class="need" aria-label="What you'll need">
       <li>Your caroling bells<small>With their song cartridge slot</small></li>
@@ -107,16 +113,21 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
   <div class="wrap narrow guide">
     <section class="step" aria-labelledby="s1">
       <h2 class="display" id="s1">Swap the cartridge</h2>
-      <p>Unplug your bells. Slide the old song cartridge out of the control box, and keep it somewhere safe. Then slide the Merrymaker into the same slot, the way it sits in this photo, until it's snug.</p>
+      <p>Unplug your bells. To open the control box, turn it over. Press firmly with your thumb where it says <b>PUSH</b> on the back cover, and slide the cover off in the direction the arrow points.</p>
+      <figure>
+        <div class="photo"><img src="/img/cover-900.webp" srcset="/img/cover-480.webp 480w, /img/cover-900.webp 900w" sizes="(max-width:640px) 92vw, 440px" width="1291" height="1291" alt="The back of the bells' control box, with a ring around the PUSH tab on the cover and an arrow showing the cover slides off away from the box" loading="lazy"></div>
+      </figure>
+      <p>Slide the old song cartridge out of the control box, and keep it somewhere safe. Then slide the Merrymaker into the same slot, the way it sits in this photo, until it's snug.</p>
       <figure>
         <div class="photo"><img src="/img/slot-900.webp" srcset="/img/slot-480.webp 480w, /img/slot-900.webp 900w" sizes="(max-width:640px) 92vw, 440px" width="1600" height="1600" alt="A Merrymaker seated in the cartridge slot of the bells' control box, lights on" loading="lazy"></div>
       </figure>
     </section>
 
     <section class="step" aria-labelledby="s2">
-      <h2 class="display" id="s2">Plug in the new adapter</h2>
-      <p>Power your bells with the adapter that came with Merrymaker, not the original one. Merrymaker needs a little more power than the old adapter can give.</p>
-      <p>After a few seconds the <b>NET</b> light starts blinking. That means it's ready to meet your phone.</p>
+      <h2 class="display" id="s2">Plug in and turn on</h2>
+      <p>Power your bells with the adapter that came with Merrymaker. Merrymaker needs a little more power than the old adapter can give.</p>
+      <p>Then switch your bells on, the same way you always have. The red <b>PWR</b> light on the Merrymaker comes on.</p>
+      <p>After a few seconds the blue <b>NET</b> light starts blinking. That means it's ready to meet your phone.</p>
     </section>
 
     <section class="step" aria-labelledby="s3">
@@ -128,12 +139,16 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
 
     <section class="step" aria-labelledby="s4">
       <h2 class="display" id="s4">Choose your home Wi-Fi</h2>
-      <p>Pick your home network from the list, type its password and tap <b>Join network</b>. When Merrymaker is on, the NET light stops blinking and stays on, and the page says <b>All set</b>.</p>
-      <ul>
-        <li>Tap <b>Copy address</b>, then <b>Finish</b>. Your phone goes back to your home Wi-Fi.</li>
-        <li>Open Safari or Chrome, paste the address and go. It looks like <span class="mono">merrymaker-4f2a.local</span>.</li>
-      </ul>
-      <p class="tip"><b>Tip:</b> once the page is open, add it to your home screen. The Merrymaker bell shows up next to your apps, and opens your bells in one tap. The page shows you how.</p>
+      <p>Pick your home network from the list, type its password and tap <b>Join network</b>. When Merrymaker joins, the blue NET light stops blinking and stays solid, and the page says <b>All set</b>.</p>
+      <div class="key">
+        <h3>Save your bells' address</h3>
+        <ol>
+          <li>Tap <b>Copy address</b>, then <b>Finish</b>. Your phone goes back to your home Wi-Fi.</li>
+          <li>Open Safari or Chrome, paste the address and go. It looks like <span class="mono">merrymaker-4f2a.local</span>: <span class="mono">merrymaker-</span> plus the same four characters as the Merrymaker network in step 3.</li>
+          <li>Add the page to your home screen. The Merrymaker bell shows up next to your apps, and opens your bells in one tap. The page shows you how.</li>
+        </ol>
+        <p>Lost it later? <a href="#lost">Here's how to find it again.</a></p>
+      </div>
     </section>
 
     <section class="step" aria-labelledby="s5">
@@ -149,13 +164,16 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
       <div class="parts">
         <div class="part">
           <h3>NET light</h3>
-          <p class="what">Wi-Fi</p>
+          <p class="what">Blue · Wi-Fi</p>
           <dl>
             <dt>Blinking</dt><dd>The Merrymaker network is open for your phone to join.</dd>
             <dt>On</dt><dd>On your home Wi-Fi and ready to play.</dd>
           </dl>
+          <h3 style="margin-top:22px">PWR light</h3>
+          <p class="what">Red · Power</p>
+          <dl><dt>On</dt><dd>Merrymaker has power.</dd></dl>
           <h3 style="margin-top:22px">STS light</h3>
-          <p class="what">Status</p>
+          <p class="what">Green · Status</p>
           <dl><dt>Flickering</dt><dd>Ringing the bells. It flashes with every note.</dd></dl>
         </div>
         <div class="part">
@@ -167,12 +185,12 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
           </dl>
         </div>
         <div class="part">
-          <h3>USER button</h3>
+          <h3>RST button</h3>
           <p class="what">For playing without your phone</p>
           <dl>
             <dt>Press</dt><dd>Plays or stops a song.</dd>
             <dt>Hold 5 seconds, then let go</dt><dd>Forgets your Wi-Fi.</dd>
-            <dt>Hold 10 seconds</dt><dd>Resets everything: Wi-Fi, the set's name and all settings. Your bells start over at step 3.</dd>
+            <dt>Hold 10 seconds</dt><dd>Resets everything: Wi-Fi, the set's name and all settings. The blue and green lights flash in turn for a moment to confirm it worked. Your bells start over at step 3.</dd>
           </dl>
         </div>
       </div>
@@ -183,8 +201,8 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
     <h2 class="title display" id="trouble-title">If something's not right.</h2>
     <details><summary>I can't see the Merrymaker network</summary>
       <ul>
-        <li>Check the NET light is blinking. If it's on steadily, your set is already on Wi-Fi: press the WIFI button to open the network again.</li>
-        <li>If no lights come on at all, check the adapter is plugged in at both ends and the Merrymaker is pushed fully into its slot.</li>
+        <li>Check the blue NET light is blinking. If it's on steadily, your set is already on Wi-Fi: press the WIFI button to open the network again.</li>
+        <li>If the red PWR light doesn't come on, check your bells are switched on, the adapter is plugged in at both ends and the Merrymaker is pushed fully into its slot.</li>
         <li>Give it 30 seconds after plugging in, then refresh the Wi-Fi list on your phone.</li>
       </ul>
     </details>
@@ -194,11 +212,17 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
     <details><summary>It couldn't join my Wi-Fi</summary>
       <p>Usually the password was mistyped. If Merrymaker can't join, the Merrymaker network comes back by itself after about 20 seconds. Join it again and re-enter the password. Passwords are case-sensitive.</p>
     </details>
+    <details id="lost"><summary>I lost my bells' address</summary>
+      <ul>
+        <li>Try <span class="mono">merrymaker-</span> plus the four characters from the Merrymaker network name, then <span class="mono">.local</span>. For <span class="mono">Merrymaker-4F2A</span> that's <span class="mono">merrymaker-4f2a.local</span>. If you renamed your set, use its new name instead.</li>
+        <li>Or press the WIFI button on the Merrymaker, join the Merrymaker network on your phone, and the page shows the address again, along with its number address. Your Wi-Fi settings aren't changed.</li>
+        <li>Your router's app or device list also shows it, named <span class="mono">merrymaker-</span> and four characters.</li>
+      </ul>
+    </details>
     <details><summary>The address won't open</summary>
       <ul>
         <li>Make sure your phone is back on your home Wi-Fi, not the Merrymaker network or mobile data.</li>
         <li>Try the number address shown under <b>All set</b> instead, such as <span class="mono">192.168.1.42</span>. Some phones and computers don't understand the <span class="mono">.local</span> name.</li>
-        <li>Lost the address? Press the WIFI button, join the Merrymaker network, and the page shows it again.</li>
       </ul>
     </details>
     <details><summary>The bells are quiet, or some bells don't ring</summary>
@@ -232,5 +256,10 @@ code,.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size
     </ul></nav>
   </div>
 </footer>
+<script>
+// Open a troubleshooting answer when a link points at it (e.g. #lost from step 4).
+function openHash(){var d=location.hash&&document.getElementById(location.hash.slice(1));if(d&&d.tagName==="DETAILS")d.open=true}
+addEventListener("hashchange",openHash);openHash();
+</script>
 </body>
 </html>
