@@ -1,6 +1,6 @@
 # Merrymaker firmware: read by every set (firmware/otamanifest.h).
 # Written by ojb-release-firmware; don't edit by hand.
-version 0.2.2
-note Updated terms of use: they now explain the daily update check. You'll be asked to agree again.
-image open-jingle-bells-module 1339424 0.2.2/open-jingle-bells-module.bin
-image open-jingle-bells-module-rev2 1340096 0.2.2/open-jingle-bells-module-rev2.bin
+version 0.2.3
+note Clearer terms of use: if you don't agree, unplug Merrymaker and put your set's original music module back in.
+image open-jingle-bells-module 1339440 0.2.3/open-jingle-bells-module.bin
+image open-jingle-bells-module-rev2 1340112 0.2.3/open-jingle-bells-module-rev2.bin
