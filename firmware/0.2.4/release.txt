@@ -1,0 +1,7 @@
+# Merrymaker firmware: read by every set (firmware/otamanifest.h).
+# Written by ojb-release-firmware; don't edit by hand.
+version 0.2.4
+note Playlists: put your songs in your own order, add a song more than once, and choose how many times each one plays.
+image open-jingle-bells-module 1351696 0.2.4/open-jingle-bells-module.bin
+image open-jingle-bells-module-rev2 1352384 0.2.4/open-jingle-bells-module-rev2.bin
+image open-jingle-bells-module-rev3 1352384 0.2.4/open-jingle-bells-module-rev3.bin
