@@ -1,0 +1,7 @@
+# Merrymaker firmware: read by every set (firmware/otamanifest.h).
+# Written by ojb-release-firmware; don't edit by hand.
+version 0.2.5
+note Merrymaker can now try out new versions early for testing; nothing changes for everyday use.
+image open-jingle-bells-module 1360512 0.2.5/open-jingle-bells-module.bin
+image open-jingle-bells-module-rev2 1361216 0.2.5/open-jingle-bells-module-rev2.bin
+image open-jingle-bells-module-rev3 1361216 0.2.5/open-jingle-bells-module-rev3.bin

@@ -1,16 +1,3 @@
 # Merrymaker beta firmware, newest first: read by sets with the beta menu
 # unlocked (firmware/otamanifest.h). Written by ojb-release-firmware; don't
 # edit by hand.
-
-version 0.2.5-beta.2
-note Beta software: tap the Software heading in Settings seven times to try test versions before they're released.
-note Test build: the same as beta 1, to try updating from one beta to the next.
-image open-jingle-bells-module 1360528 0.2.5-beta.2/open-jingle-bells-module.bin
-image open-jingle-bells-module-rev2 1361232 0.2.5-beta.2/open-jingle-bells-module-rev2.bin
-image open-jingle-bells-module-rev3 1361232 0.2.5-beta.2/open-jingle-bells-module-rev3.bin
-
-version 0.2.5-beta.1
-note Beta software: tap the Software heading in Settings seven times to try test versions before they're released.
-image open-jingle-bells-module 1360528 0.2.5-beta.1/open-jingle-bells-module.bin
-image open-jingle-bells-module-rev2 1361232 0.2.5-beta.1/open-jingle-bells-module-rev2.bin
-image open-jingle-bells-module-rev3 1361232 0.2.5-beta.1/open-jingle-bells-module-rev3.bin
