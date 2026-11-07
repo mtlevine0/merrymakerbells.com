@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VJ4SF43');</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buy Merrymaker</title>
+
+<meta name="description" content="Order a Merrymaker for your Ye Merrie Minstrel caroling bells. 83 songs, a 1 A power adapter, and secure checkout by Stripe.">
+<link rel="canonical" href="https://merrymakerbells.com/buy/">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://merrymakerbells.com/buy/">
+<meta property="og:title" content="Buy Merrymaker">
+<meta property="og:description" content="83 songs for your caroling bells, played from your phone.">
+<meta property="og:image" content="https://merrymakerbells.com/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<style>
+.order{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start;padding-top:16px;padding-bottom:72px}
+
+/* Gallery: main viewer with a thumbnail strip underneath */
+.gallery{position:sticky;top:16px;display:grid;gap:12px}
+.viewer{position:relative}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:22px;aspect-ratio:1;box-shadow:0 28px 50px -26px rgba(29,27,24,.55)}
+.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:1}
+.zoom{display:block;width:100%;height:100%;cursor:zoom-in}
+.zoom img{width:100%;height:100%;object-fit:cover}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(29,27,24,.25);display:grid;place-items:center;color:var(--ink)}
+.nav:hover{background:#fff;color:var(--cardinal)}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:12px}
+.nav.next{right:12px}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:60px;gap:8px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:thin}
+.thumb{display:block;width:60px;height:60px;border-radius:10px;overflow:hidden;border:2px solid transparent;opacity:.65;transition:opacity .12s,border-color .12s}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:hover{opacity:1}
+.thumb[aria-current]{border-color:var(--evergreen);opacity:1}
+.no-js .nav{display:none}
+
+/* Order panel */
+.order h1{font-size:clamp(44px,5.5vw,72px);line-height:1.02;color:var(--evergreen);margin-bottom:12px}
+.order .lede{font-size:20px;line-height:1.45;margin-bottom:20px;max-width:30em}
+.price{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.price b{font-family:var(--font-display);font-weight:620;font-size:42px;line-height:1;font-variant-numeric:lining-nums}
+.price span{color:var(--stone);font-size:16px}
+.box{margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:18px}
+.box h2{font-size:18px;font-weight:700;margin-bottom:12px}
+.box ul{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box li{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:17px;line-height:1.25}
+.box .pic{display:grid;place-items:center;height:120px;border-radius:12px;background:var(--paper-deep);margin-bottom:6px;overflow:hidden}
+.box .pic img{width:auto;height:auto;max-width:82%;max-height:100px;transform:rotate(-4deg);filter:drop-shadow(0 6px 8px rgba(60,40,10,.25))}
+.box .pic svg{width:96px;height:96px}
+.box small{font-weight:400;color:var(--stone);font-size:15px;line-height:1.35}
+.box .both{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:15.5px;display:flex;gap:8px;align-items:flex-start}
+.box .both svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--evergreen)}
+.pay{display:grid;gap:12px;max-width:460px}
+.pay .btn{width:100%;font-size:19px;min-height:58px}
+.pay .btn[aria-disabled="true"]{background:var(--stone);cursor:not-allowed}
+.qty{border:0;margin:0;padding:0;display:grid;gap:8px}
+.qty legend{font-weight:700;font-size:18px;margin-bottom:10px;padding:0}
+.qty label{display:grid;grid-template-columns:auto 1fr auto;column-gap:12px;align-items:center;border:2px solid var(--line);border-radius:14px;background:var(--card);padding:12px 16px;cursor:pointer}
+.qty label:has(input:checked){border-color:var(--evergreen);box-shadow:0 0 0 1px var(--evergreen)}
+.qty input{width:20px;height:20px;margin:0;accent-color:var(--evergreen);grid-row:span 2}
+.qty .n{font-weight:700;font-size:17px}
+.qty .p{font-family:var(--font-display);font-weight:620;font-size:20px;font-variant-numeric:lining-nums;text-align:right}
+.qty small{grid-column:2/4;color:var(--stone);font-size:14.5px;line-height:1.35}
+.qty label:has(input:checked) small{color:var(--evergreen)}
+.pay .btn[aria-disabled="true"]:hover{transform:none;background:var(--stone)}
+.soon{background:var(--card);border:2px solid var(--brass);border-radius:14px;padding:12px 16px;font-size:16px}
+.secure{display:flex;gap:8px;align-items:center;justify-content:center;font-size:15px;color:var(--stone);text-align:center}
+.secure svg{width:15px;height:15px;flex:none}
+.check{background:var(--paper-deep);border-radius:16px;padding:18px 20px;margin-top:26px}
+.check h2{font-size:18px;font-weight:700;margin-bottom:10px}
+.check ul{display:grid;gap:8px;font-size:16.5px}
+.check li{display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+.check li svg{width:19px;height:19px;flex:none;margin-top:2px;color:var(--evergreen)}
+
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:72px}
+.terms section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.terms h2{font-size:26px;line-height:1.15;color:var(--evergreen);margin-bottom:8px}
+.terms p{font-size:16.5px}
+.terms p+p{margin-top:8px}
+.todo{color:var(--stone);font-style:italic}
+
+.faq{padding-bottom:96px}
+.faq h2{font-size:clamp(30px,4vw,44px);color:var(--evergreen);margin-bottom:16px}
+.faq details{border-top:1px solid #d7d1c3}
+.faq details:last-of-type{border-bottom:1px solid #d7d1c3}
+.faq summary{cursor:pointer;font-weight:700;font-size:20px;padding:16px 0;list-style-position:inside}
+.faq details p{padding:0 0 18px;max-width:40em}
+
+/* Full-screen view */
+.lb{border:0;padding:0;margin:0;inset:0;width:100%;height:100vh;height:100dvh;max-width:none;max-height:none;overflow:hidden;background:rgba(18,17,15,.96);color:#fff}
+.lb::backdrop{background:rgba(18,17,15,.96)}
+.lb[open]{display:grid;grid-template-rows:auto 1fr auto}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-weight:700;font-variant-numeric:tabular-nums}
+.lb-close{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.lb-close:hover{background:rgba(255,255,255,.12)}
+.lb-close svg{width:22px;height:22px}
+/* The picture is pinned inside the stage, so it always fits between the top bar and the caption. */
+.lb-stage{position:relative;min-height:0;touch-action:pan-y}
+.lb-stage img{position:absolute;inset:0 72px;width:calc(100% - 144px);height:100%;object-fit:contain}
+.lb .nav{background:rgba(255,255,255,.14);color:#fff;box-shadow:none}
+.lb .nav:hover{background:rgba(255,255,255,.28);color:#fff}
+.lb-cap{padding:12px 16px 18px;min-height:48px;text-align:center;font-size:15px;opacity:.85;max-width:50em;justify-self:center}
+
+@media (max-width:900px){
+  .order{grid-template-columns:1fr;gap:32px;padding-bottom:56px}
+  .gallery{position:static;max-width:560px;width:100%;justify-self:center}
+  .terms{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .slides{border-radius:16px}
+  .nav{width:38px;height:38px}
+  .nav.prev{left:8px}.nav.next{right:8px}
+  .price b{font-size:38px}
+  .lb-stage img{inset:0 8px;width:calc(100% - 16px)}
+  .lb-stage .nav{display:none}
+  .faq summary{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){.thumb{transition:none}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VJ4SF43" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap topnav">
+  <a class="home" href="/" aria-label="Merrymaker home"><img src="/img/lockup-horizontal.svg" alt="Merrymaker" width="220" height="52"></a>
+  <nav aria-label="Main"><ul>
+    <li><a href="/#songs">Songs</a></li>
+    <li><a href="/#fit">Will it fit?</a></li>
+    <li><a href="/setup/">Setup</a></li>
+    <li><a class="btn primary" href="/buy/" aria-current="page">Buy Now</a></li>
+  </ul></nav>
+</header>
+
+<main id="main">
+  <div class="wrap order">
+    <section class="gallery" aria-label="Pictures (12)">
+      <div class="viewer">
+        <ul class="slides" tabindex="0" aria-label="Pictures. Use the arrow keys to move between them.">
+<li class="slide"><button type="button" class="zoom" data-i="0" data-lg="/img/g/hero-lg.webp" aria-label="Image 1 of 12, open larger: Merrymaker beside an original song cartridge, in front of a Caroling Christmas Bells box"><img src="/img/g/hero-md.webp" srcset="/img/g/hero-md.webp 800w, /img/g/hero-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Merrymaker beside an original song cartridge, in front of a Caroling Christmas Bells box" fetchpriority="high"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="1" data-lg="/img/g/control-lg.webp" aria-label="Image 2 of 12, open larger: Your phone is the remote: 83 songs, shuffle or play all, every set in time, write your own"><img src="/img/g/control-md.webp" srcset="/img/g/control-md.webp 800w, /img/g/control-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Your phone is the remote: 83 songs, shuffle or play all, every set in time, write your own" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="2" data-lg="/img/g/choir-lg.webp" aria-label="Image 3 of 12, open larger: Ring every set together: tap once and every set rings the same song on the same beat"><img src="/img/g/choir-md.webp" srcset="/img/g/choir-md.webp 800w, /img/g/choir-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Ring every set together: tap once and every set rings the same song on the same beat" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="3" data-lg="/img/g/compose-lg.webp" aria-label="Image 4 of 12, open larger: Write a song of your own by tapping squares on a grid, no music reading needed"><img src="/img/g/compose-md.webp" srcset="/img/g/compose-md.webp 800w, /img/g/compose-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Write a song of your own by tapping squares on a grid, no music reading needed" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="4" data-lg="/img/g/playlists-lg.webp" aria-label="Image 5 of 12, open larger: Make your own playlists: any songs you like, drag to reorder, play once, repeat or shuffle on every set"><img src="/img/g/playlists-md.webp" srcset="/img/g/playlists-md.webp 800w, /img/g/playlists-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Make your own playlists: any songs you like, drag to reorder, play once, repeat or shuffle on every set" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="5" data-lg="/img/g/steps-lg.webp" aria-label="Image 6 of 12, open larger: Ringing in three steps: slide it in, connect your phone, pick a song"><img src="/img/g/steps-md.webp" srcset="/img/g/steps-md.webp 800w, /img/g/steps-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Ringing in three steps: slide it in, connect your phone, pick a song" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="6" data-lg="/img/g/before-lg.webp" aria-label="Image 7 of 12, open larger: Before you buy: your bells, Wi-Fi, your phone, and no modifications needed"><img src="/img/g/before-md.webp" srcset="/img/g/before-md.webp 800w, /img/g/before-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Before you buy: your bells, Wi-Fi, your phone, and no modifications needed" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="7" data-lg="/img/g/swap-lg.webp" aria-label="Image 8 of 12, open larger: Swap out the old cartridge for Merrymaker"><img src="/img/g/swap-md.webp" srcset="/img/g/swap-md.webp 800w, /img/g/swap-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Swap out the old cartridge for Merrymaker" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="8" data-lg="/img/g/where-lg.webp" aria-label="Image 9 of 12, open larger: Merrymaker goes right where the old cartridge went, powered by the included 1 A adapter"><img src="/img/g/where-md.webp" srcset="/img/g/where-md.webp 800w, /img/g/where-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Merrymaker goes right where the old cartridge went, powered by the included 1 A adapter" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="9" data-lg="/img/g/fit-lg.webp" aria-label="Image 10 of 12, open larger: Check your bells first: sets with a slide-out song cartridge work, sets with built-in songs don&#x27;t"><img src="/img/g/fit-md.webp" srcset="/img/g/fit-md.webp 800w, /img/g/fit-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Check your bells first: sets with a slide-out song cartridge work, sets with built-in songs don&#x27;t" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="10" data-lg="/img/g/more-sets-lg.webp" aria-label="Image 11 of 12, open larger: Also works with the AUS200/201 and AUS300 sets"><img src="/img/g/more-sets-md.webp" srcset="/img/g/more-sets-md.webp 800w, /img/g/more-sets-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="Also works with the AUS200/201 and AUS300 sets" loading="lazy"></button></li>
+<li class="slide"><button type="button" class="zoom" data-i="11" data-lg="/img/g/songs-lg.webp" aria-label="Image 12 of 12, open larger: 83 songs in five collections, ready to ring"><img src="/img/g/songs-md.webp" srcset="/img/g/songs-md.webp 800w, /img/g/songs-lg.webp 1600w" sizes="(max-width:900px) 100vw, 560px" width="800" height="800" alt="83 songs in five collections, ready to ring" loading="lazy"></button></li>
+        </ul>
+        <button type="button" class="nav prev" aria-label="Previous picture"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="nav next" aria-label="Next picture"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="rail">
+<li><button type="button" class="thumb" data-i="0" aria-label="Show image 1 of 12" aria-current="true"><img src="/img/g/hero-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="1" aria-label="Show image 2 of 12"><img src="/img/g/control-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="2" aria-label="Show image 3 of 12"><img src="/img/g/choir-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="3" aria-label="Show image 4 of 12"><img src="/img/g/compose-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="4" aria-label="Show image 5 of 12"><img src="/img/g/playlists-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="5" aria-label="Show image 6 of 12"><img src="/img/g/steps-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="6" aria-label="Show image 7 of 12"><img src="/img/g/before-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="7" aria-label="Show image 8 of 12"><img src="/img/g/swap-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="8" aria-label="Show image 9 of 12"><img src="/img/g/where-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="9" aria-label="Show image 10 of 12"><img src="/img/g/fit-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="10" aria-label="Show image 11 of 12"><img src="/img/g/more-sets-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+<li><button type="button" class="thumb" data-i="11" aria-label="Show image 12 of 12"><img src="/img/g/songs-thumb.webp" width="160" height="160" alt="" loading="lazy"></button></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="buy-title">
+      <p class="kicker">Get yours</p>
+      <h1 class="display" id="buy-title">Merrymaker</h1>
+      <p class="lede">Slides into your caroling bells in place of the old song cartridge, with all 83 songs ready to ring. Line them up in playlists of your own and play the whole show on every set.</p>
+      <p class="price"><b>$68.99</b><span>with free shipping in the US</span></p>
+
+      <div class="box">
+        <h2 id="inbox">What's in the box</h2>
+        <ul aria-labelledby="inbox">
+          <li><div class="pic"><img src="/img/cut-board-400.webp" srcset="/img/cut-board-400.webp 400w, /img/cut-board-800.webp 800w" sizes="200px" alt="The Merrymaker board" loading="lazy"></div>1 Merrymaker<small>Loaded with all 83 songs. Slides in where the old cartridge went.</small></li>
+          <li><div class="pic"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M33 14V4M51 14V4" stroke="#6f6a61" stroke-width="5" stroke-linecap="round"/><rect x="20" y="14" width="44" height="40" rx="9" fill="#1f4d3a"/><rect x="28" y="22" width="28" height="4" rx="2" fill="#f6f4ef" opacity=".35"/><path d="M42 54v8c0 10 10 10 18 10h8c8 0 10 6 10 12" fill="none" stroke="#1d1b18" stroke-width="4" stroke-linecap="round"/><rect x="72" y="80" width="12" height="14" rx="3" fill="#1d1b18"/></svg></div>1 power adapter<small>A 1 A adapter. Use it instead of your bells' original one, which can't power Merrymaker.</small></li>
+        </ul>
+        <p class="both"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Both come in the box for $68.99. Your bells are not included.</span></p>
+      </div>
+
+      <div class="pay">
+        <fieldset class="qty"><legend>How many sets?</legend><label><input type="radio" name="qty" value="1" data-href="https://buy.stripe.com/7sY28reCAdoDeRgaYIfUQ02" checked><span class="n">1 set</span><span class="p">$68.99</span></label><label><input type="radio" name="qty" value="2" data-href="https://buy.stripe.com/14A4gz8ec3O3bF44AkfUQ03"><span class="n">2 sets</span><span class="p">$110.38</span><small>Save $27.60</small></label><label><input type="radio" name="qty" value="3" data-href="https://buy.stripe.com/8x2bJ1gKI98nbF47MwfUQ04"><span class="n">3 sets</span><span class="p">$144.88</span><small>Save $62.09</small></label><label><input type="radio" name="qty" value="4+" data-href="https://buy.stripe.com/dRmeVd7a8fwLdNc4AkfUQ05"><span class="n">4 or more sets</span><span class="p">$175.96 for 4</span><small>Save $100. Add more sets at checkout, $68.99 each</small></label></fieldset><a class="btn primary" id="checkout" href="https://buy.stripe.com/7sY28reCAdoDeRgaYIfUQ02">Buy Now<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><script>(()=>{const a=document.getElementById("checkout");for(const r of document.querySelectorAll('input[name="qty"]'))r.addEventListener("change",()=>{a.href=r.dataset.href});const c=document.querySelector('input[name="qty"]:checked');if(c)a.href=c.dataset.href})()</script>
+        <p class="secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Secure checkout by Stripe. Pay by card, Apple Pay or Google Pay, or over time with Klarna or Affirm.</p>
+      </div>
+
+      <div class="check">
+        <h2>Before you order</h2>
+        <ul>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your bells take a removable song cartridge. <a href="/#fit">Check your bells</a></span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You have a 2.4 GHz Wi-Fi network, which almost every home router has.</span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>One Merrymaker per set. Playing several sets together? Order one for each.</span></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap terms">
+    <section aria-labelledby="t-ship">
+      <h2 class="display" id="t-ship">Shipping</h2>
+      <p>We pack and ship each order ourselves, with tracking. You'll get the tracking number by email.</p>
+      <p>Shipping is free. We ship to addresses in the United States only.</p>
+      <p>Orders ship within 3 to 5 business days.</p>
+    </section>
+    <section aria-labelledby="t-returns">
+      <h2 class="display" id="t-returns">Returns</h2>
+      <p>You can return your Merrymaker within 30 days of delivery for a full refund, including if it doesn't fit your bells. Send it back with the power adapter, and we'll refund the payment method you used.</p>
+      <p>Email <a href="mailto:contact@merrymakerbells.com">contact@merrymakerbells.com</a> to start a return. Return shipping is paid by you, unless your order arrived faulty or damaged.</p>
+    </section>
+    <section aria-labelledby="t-help">
+      <h2 class="display" id="t-help">Help after you buy</h2>
+      <p>The <a href="/setup/">setup guide</a> walks you through your first song.</p>
+      <p>Questions about your order? Email <a href="mailto:contact@merrymakerbells.com">contact@merrymakerbells.com</a>.</p>
+      <p>Merrymaker comes with a 1-year warranty. If it stops working within a year of delivery, email us and we'll repair or replace it. The warranty doesn't cover damage from accidents, misuse or modifications.</p>
+    </section>
+  </div>
+
+  <section class="wrap narrow faq" aria-labelledby="faq">
+    <h2 class="display" id="faq">About your order</h2>
+    <details><summary>Who handles the payment?</summary><p>Stripe, a payment company used by millions of businesses. Your payment details go straight to Stripe and never reach us. Stripe emails you a receipt as soon as you pay.</p></details>
+    <details><summary>Can I pay over time?</summary><p>Yes. Choose Klarna or Affirm at checkout to split the cost into smaller payments. They decide who qualifies and set the terms, and you pay them directly. Which options you see depends on your order.</p></details>
+    <details><summary>Can I order more than one?</summary><p>Yes, and you save when you do. Pick how many above: 2 sets save $27.60, 3 sets save $62.09, and 4 or more save $100. Each set of bells needs its own Merrymaker, and up to 17 sets can play together.</p></details>
+    <details><summary>Not sure your bells will work?</summary><p>See <a href="/#fit">Check your bells first</a>. If you're still unsure, email a photo of your bells to <a href="mailto:contact@merrymakerbells.com">contact@merrymakerbells.com</a> before you order and we'll tell you.</p></details>
+  </section>
+</main>
+
+<dialog class="lb" aria-label="Picture viewer">
+  <div class="lb-top"><span><span class="now">1</span> of 12</span><button type="button" class="lb-close" aria-label="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button></div>
+  <div class="lb-stage">
+    <img alt="">
+    <button type="button" class="nav prev" style="left:12px" aria-label="Previous picture"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="nav next" style="right:12px" aria-label="Next picture"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <p class="lb-cap"></p>
+</dialog>
+
+<footer class="on-dark">
+  <div class="wrap">
+    <img class="logo" src="/img/lockup-horizontal-paper.svg" alt="Merrymaker" width="212" height="50">
+    <div>
+      <p>Teach your old bells new songs.</p>
+      <p class="dim">Merrymaker is an independent product, not made by or affiliated with the makers of Ye Merrie Minstrel. "Ye Merrie Minstrel" is used only to describe compatibility. Bells, shown or mentioned, are not included.</p>
+    </div>
+    <nav aria-label="Footer"><ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/setup/">Setup guide</a></li>
+      <li><a href="/#songs">Songbook</a></li>
+      <li><a href="/buy/">Buy Now</a></li>
+    </ul></nav>
+  </div>
+</footer>
+<script src="/buy/gallery.js" defer></script>
+</body>
+</html>

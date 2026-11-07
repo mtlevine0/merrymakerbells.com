@@ -99,7 +99,7 @@ $('ring-all').addEventListener('click', () => {
 
 // Compose grid, highest bell on top, starting with 16 frames of the published O Come All Ye
 // Faithful (recomposed ROM, frames 438-453): the run up to E7 and back over D6/F#6 chords,
-// landing on D7+G6. Same as eBay graphic 04. Steps are the ROM's 120 ms sixteenths, and
+// landing on D7+G6. Same as product graphic 04. Steps are the ROM's 120 ms sixteenths, and
 // the song's quarter notes fall on steps 2, 6, 10 and 14.
 const STEPS = 16;
 const START = {1:[2,6,10], 2:[0], 4:[1,6,10], 5:[2,14], 6:[3,11], 8:[4,10,12], 9:[5,9,13], 10:[6,8,14], 11:[7]};
