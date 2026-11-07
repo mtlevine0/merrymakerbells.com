@@ -97,9 +97,12 @@ $('ring-all').addEventListener('click', () => {
   document.querySelectorAll('#rooms .room').forEach(room => swing(room, 900));
 });
 
-// Compose grid, highest bell on top, starting with the opening of Jingle Bells.
+// Compose grid, highest bell on top, starting with 16 frames of the published O Come All Ye
+// Faithful (recomposed ROM, frames 438-453): the run up to E7 and back over D6/F#6 chords,
+// landing on D7+G6. Same as eBay graphic 04. Steps are the ROM's 120 ms sixteenths, and
+// the song's quarter notes fall on steps 2, 6, 10 and 14.
 const STEPS = 16;
-const START = {2:[0,1,2,4,5,6,8,12], 5:[9], 0:[10], 1:[11]};
+const START = {1:[2,6,10], 2:[0], 4:[1,6,10], 5:[2,14], 6:[3,11], 8:[4,10,12], 9:[5,9,13], 10:[6,8,14], 11:[7]};
 const roll = $('roll');
 const cells = [];
 for (let visualRow = 0; visualRow < 12; visualRow++) {
@@ -111,7 +114,7 @@ for (let visualRow = 0; visualRow < 12; visualRow++) {
   for (let step = 0; step < STEPS; step++) {
     const cell = document.createElement('button');
     cell.type = 'button';
-    cell.className = 'cell' + (step % 4 === 0 ? ' beat' : '');
+    cell.className = 'cell' + (step % 4 === 2 ? ' beat' : '');
     cell.tabIndex = visualRow === 0 && step === 0 ? 0 : -1;
     cell.dataset.index = index;
     cell.dataset.step = step;
@@ -143,7 +146,7 @@ hearBtn.addEventListener('click', () => {
   stopSong();
   songButton = hearBtn;
   hearBtn.textContent = 'Stop';
-  const beat = 235;
+  const beat = 120;
   for (let step = 0; step < STEPS; step++) {
     schedule(() => {
       cells.forEach(cell => {
